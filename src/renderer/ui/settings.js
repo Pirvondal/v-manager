@@ -310,5 +310,41 @@ export function initSettingsListeners() {
         }
     });
 
+    // ── User Game Form Toggler (SOLID implementation) ───────────────────────
+    const formToggler = new UserGameFormManager('toggle-add-user-game-btn', 'ug-add-btn');
+    formToggler.init();
+
     window.electronAPI.logToMain('initSettingsListeners: Done');
+}
+
+// ── SOLID: User Game Form UI Manager ──────────────────────────────────────────
+class UserGameFormManager {
+    constructor(toggleBtnId, addBtnId) {
+        this.toggleBtn = document.getElementById(toggleBtnId);
+        this.addBtn = document.getElementById(addBtnId);
+        this.formCard = this.addBtn ? this.addBtn.closest('.card') : null;
+    }
+
+    init() {
+        if (!this.toggleBtn || !this.formCard) return;
+
+        this.toggleBtn.addEventListener('click', () => {
+            const isVisible = this.formCard.style.display !== 'none';
+            if (isVisible) {
+                this.hide();
+            } else {
+                this.show();
+            }
+        });
+    }
+
+    show() {
+        if (this.formCard) this.formCard.style.display = 'block';
+        if (this.toggleBtn) this.toggleBtn.textContent = t('settings.hideAddGameBtn') || 'Formu Gizle';
+    }
+
+    hide() {
+        if (this.formCard) this.formCard.style.display = 'none';
+        if (this.toggleBtn) this.toggleBtn.textContent = t('settings.addNewGameBtn') || 'Yol Ekle';
+    }
 }

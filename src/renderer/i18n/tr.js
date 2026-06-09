@@ -181,6 +181,8 @@ export const tr = {
         colAction: 'İşlem',
         noUserGames: 'Henüz kullanıcı tanımlı oyun yolu bulunmuyor.',
         deleteBtn: 'Sil',
+        addNewGameBtn: 'Yol Ekle',
+        hideAddGameBtn: 'Formu Gizle',
         newGameTitle: '✦ Yeni Oyun Tanımla',
         labelGameName: 'Oyun Adı',
         labelGameRoot: 'Ana Klasör (game_root)',

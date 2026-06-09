@@ -182,6 +182,8 @@ export const en = {
         colAction: 'Action',
         noUserGames: 'No user-defined game paths yet.',
         deleteBtn: 'Delete',
+        addNewGameBtn: 'Add Path',
+        hideAddGameBtn: 'Hide Form',
         newGameTitle: '✦ Define New Game',
         labelGameName: 'Game Name',
         labelGameRoot: 'Root Folder (game_root)',
